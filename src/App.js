@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import Global from './styles/global';
 import api from './services/api';
 import Cart from './components/Cart';
-// import Header from './components/Header';
+import Header from './components/Header';
 // import CardEmpty from './components/CardEmpty';
+import Product from './components/Product'
 import './App.css';
 
 
@@ -25,7 +26,8 @@ const [filteredProducts, setFilteredProducts] = useState([]);
     <div className="App">
       <Global />
       {/* <CardEmpty/> */}
-      {/* <Header/> */}
+      <Header/>
+      <Product/>
       <Cart/>
       
     </div>

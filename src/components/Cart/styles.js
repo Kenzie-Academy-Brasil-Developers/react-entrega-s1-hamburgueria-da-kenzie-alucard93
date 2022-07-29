@@ -4,6 +4,8 @@ import styled from "styled-components";
 export const ContainerCart = styled.div`
   display: flex;
   width: 100%;
+  margin-top:20px;
+  
 
   section{
     width: 90%;
