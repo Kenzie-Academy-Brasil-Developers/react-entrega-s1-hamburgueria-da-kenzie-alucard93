@@ -1,9 +1,9 @@
 import { ContainerCart } from "./styles";
-import Item from "../../assets/item.svg"
 import CartValue from "../CartValue"
 
 
-const Cart = () => {
+const Cart = ({currentSale, setCurrentSale, removeProduct}) => {
+
     return (
         <>
             <ContainerCart>
@@ -11,43 +11,31 @@ const Cart = () => {
                     <div className="container__tittle">
                         <h1>Carrinho de Compra</h1>
                     </div>
+
+                    
+                    {currentSale.map((product) => (
                     <ul>
                         <figure>
-                            <img src={Item} alt="Item do Cardápio" />
+                            <img 
+                                src={product.img} 
+                                alt={product.name}
+                                />
                         </figure>
                         <div className="container__category">
-                            <h2>Hamburguer</h2>
-                            <p>Sanduíches</p>
+                            <h2>{product.name}</h2>
+                            <p>{product.category}</p>
                         </div>
                         <div className="container__button">
-                        <button className="button__remove">Remover</button>
+                        <button onClick={() => removeProduct(product.id)} className="button__remove">Remover</button>
                         </div>
                     </ul>
-                    <ul>
-                        <figure>
-                            <img src={Item} alt="Item do Cardápio" />
-                        </figure>
-                        <div className="container__category">
-                            <h2>Hamburguer</h2>
-                            <p>Sanduíches</p>
-                        </div>
-                        <div className="container__button">
-                        <button className="button__remove">Remover</button>
-                        </div>
-                    </ul>
-                    <ul>
-                        <figure>
-                            <img src={Item} alt="Item do Cardápio" />
-                        </figure>
-                        <div className="container__category">
-                            <h2>Hamburguer</h2>
-                            <p>Sanduíches</p>
-                        </div>
-                        <div className="container__button">
-                        <button className="button__remove">Remover</button>
-                        </div>
-                    </ul>
-                    <CartValue/>
+                    ))}
+
+                    <CartValue 
+                        currentSale={currentSale} 
+                        setCurrentSale={setCurrentSale}
+                        />
+
                 </section> 
             </ContainerCart>
         </>

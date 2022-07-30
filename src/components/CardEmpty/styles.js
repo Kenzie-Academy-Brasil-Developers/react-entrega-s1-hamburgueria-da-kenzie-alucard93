@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   width: 100%;
+  margin-top: 20px;
 
   section{
-    margin: 0 auto;
+    margin-left: 21px;
     width: 80%;
     height: 223px;
     max-width: 365px;

@@ -1,77 +1,21 @@
-import { ContainerProduct } from "./styles";
-import BUGAO from "../../assets/BUGAO.svg"
 
-const Product = () => {
+const Product = ({item, handleClick}) => {
     return (
         <>
-            <ContainerProduct>
+            
             <section className="container__product">
                 <figure className="container__figure">
-                    <img className="container__figure--img"  src={BUGAO} alt="foto Hamburguer" />
+                    <img className="container__figure--img" src={item.img} alt={item.name} />
                 </figure>
                 <div className="container__description">
-                    <h3 className="container__description--tittle" > Hamburguer </h3>
-                    <p className="container__description--category"> Sanduíches </p>
-                    <p className="container__description--price"> R$ 14.00 </p>
-                    <button className="container__description--button"> Adicionar </button>
+                    <h3 className="container__description--tittle" > {item.name} </h3>
+                    <p className="container__description--category"> {item.category} </p>
+                    <p className="container__description--price"> {item.price} </p>
+                    <button onClick={() => handleClick(item.id)} className="container__description--button"> Adicionar </button>
                 </div>
             </section>
-            <section className="container__product">
-                <figure className="container__figure">
-                    <img className="container__figure--img"  src={BUGAO} alt="foto Hamburguer" />
-                </figure>
-                <div className="container__description">
-                    <h3 className="container__description--tittle" > Hamburguer </h3>
-                    <p className="container__description--category"> Sanduíches </p>
-                    <p className="container__description--price"> R$ 14.00 </p>
-                    <button className="container__description--button"> Adicionar </button>
-                </div>
-            </section>
-            <section className="container__product">
-                <figure className="container__figure">
-                    <img className="container__figure--img"  src={BUGAO} alt="foto Hamburguer" />
-                </figure>
-                <div className="container__description">
-                    <h3 className="container__description--tittle" > Hamburguer </h3>
-                    <p className="container__description--category"> Sanduíches </p>
-                    <p className="container__description--price"> R$ 14.00 </p>
-                    <button className="container__description--button"> Adicionar </button>
-                </div>
-            </section>
-            <section className="container__product">
-                <figure className="container__figure">
-                    <img className="container__figure--img"  src={BUGAO} alt="foto Hamburguer" />
-                </figure>
-                <div className="container__description">
-                    <h3 className="container__description--tittle" > Hamburguer </h3>
-                    <p className="container__description--category"> Sanduíches </p>
-                    <p className="container__description--price"> R$ 14.00 </p>
-                    <button className="container__description--button"> Adicionar </button>
-                </div>
-            </section>
-            <section className="container__product">
-                <figure className="container__figure">
-                    <img className="container__figure--img"  src={BUGAO} alt="foto Hamburguer" />
-                </figure>
-                <div className="container__description">
-                    <h3 className="container__description--tittle" > Hamburguer </h3>
-                    <p className="container__description--category"> Sanduíches </p>
-                    <p className="container__description--price"> R$ 14.00 </p>
-                    <button className="container__description--button"> Adicionar </button>
-                </div>
-            </section>
-            <section className="container__product">
-                <figure className="container__figure">
-                    <img className="container__figure--img"  src={BUGAO} alt="foto Hamburguer" />
-                </figure>
-                <div className="container__description">
-                    <h3 className="container__description--tittle" > Hamburguer </h3>
-                    <p className="container__description--category"> Sanduíches </p>
-                    <p className="container__description--price"> R$ 14.00 </p>
-                    <button className="container__description--button"> Adicionar </button>
-                </div>
-            </section>
-            </ContainerProduct>
+            
+            
         </>
     )
 }

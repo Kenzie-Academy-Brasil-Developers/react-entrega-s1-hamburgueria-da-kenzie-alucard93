@@ -1,7 +1,8 @@
 import { Container } from "./styles";
 
 
-const CartValue = () => {
+const CartValue = ({ currentSale, setCurrentSale }) => {
+
     return (
         <>
             <Container>
@@ -11,10 +12,13 @@ const CartValue = () => {
                         </p>
                         <div className="container__total">
                             <p className="container__title">Total</p>
-                            <p className="container__price">R$ 40.00</p>
+                            <p className="container__price"> R$ {currentSale.reduce((acc, value) => acc + value.price, 0).toFixed(2) } </p>
                         </div>
                         <div>
-                            <button>Remover Todos</button>
+                            <button
+                            onClick={() => setCurrentSale([]) } 
+                            > Remover Todos
+                            </button>
                         </div>
                     </article>
                 
