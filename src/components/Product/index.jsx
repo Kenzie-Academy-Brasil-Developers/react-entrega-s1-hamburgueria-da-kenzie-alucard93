@@ -10,7 +10,7 @@ const Product = ({item, handleClick}) => {
                 <div className="container__description">
                     <h3 className="container__description--tittle" > {item.name} </h3>
                     <p className="container__description--category"> {item.category} </p>
-                    <p className="container__description--price"> {item.price} </p>
+                    <p className="container__description--price">R$ {item.price} </p>
                     <button onClick={() => handleClick(item.id)} className="container__description--button"> Adicionar </button>
                 </div>
             </section>

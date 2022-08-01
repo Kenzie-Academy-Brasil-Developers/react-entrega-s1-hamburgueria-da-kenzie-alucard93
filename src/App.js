@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Global from './styles/global';
+import Global, { Container } from './styles/global';
 import api from './services/api';
 import Cart from './components/Cart';
 import Header from './components/Header';
@@ -11,16 +11,35 @@ import './App.css';
 function App() {
 
 const [products, setProducts] = useState([]);
-// const [filteredProducts, setFilteredProducts] = useState([]);
+const [filteredProducts, setFilteredProducts] = useState([...products]);
 const [currentSale, setCurrentSale] = useState([])
-// const [cartTotal, setCartTotal] = useState(0)
-
+const [inputValue, setInputValue] = useState("");
 
 useEffect(() => {
   api
     .get("/products")
-    .then((response) => setProducts(response.data));
+    .then((response) => { 
+      setProducts(response.data)
+    })
 }, []);
+
+useEffect(() => {
+  if (inputValue === "") setFilteredProducts(products);
+}, [inputValue]);
+
+useEffect(() => {
+  setFilteredProducts([...products]);
+}, [products]);
+
+const showProducts = (iptValue) => {
+  setFilteredProducts(
+    products.filter(
+      (e) =>
+        e.name.toLowerCase().includes(iptValue.toLowerCase()) ||
+        e.category.toLowerCase().includes(iptValue.toLowerCase())
+    )
+  );
+};
 
 
 const handleClick = (id) => {
@@ -35,7 +54,6 @@ const handleClick = (id) => {
 const removeProduct = (id) => {
   const item = currentSale.filter(product => product.id !== id)
   setCurrentSale(item)
-  console.log("foi")
 }
 
 
@@ -43,9 +61,14 @@ const removeProduct = (id) => {
     <div className="App">
       <Global />
       
-      <Header/>
+      <Header
+      setInput={setInputValue}
+      showProducts={showProducts}
+      valorInput={inputValue} 
+      />
+      <Container>
       <ProductList 
-      products={products}
+      products={filteredProducts}
       handleClick={handleClick}
       />
       { currentSale.length === 0 
@@ -59,7 +82,7 @@ const removeProduct = (id) => {
         removeProduct={removeProduct}
         /> )
       }
-      
+      </Container>
     </div>
   );
 }

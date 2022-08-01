@@ -92,7 +92,7 @@ export const ContainerCart = styled.div`
     display: flex;
     justify-content: end;
     width: 30%;
-  }
+  } 
 
   .button__remove{
     height: 20px;
@@ -107,4 +107,37 @@ export const ContainerCart = styled.div`
     margin-right: 15px;
     background: #F5F5F5;
   }
+  @media (min-width: 450px){
+    justify-content: center;
+    section{
+      width: 80%;
+      margin-right: 5%;
+      margin-left: 10%;
+    }
+  }
+
+  @media (min-width: 800px){
+    float: right;
+    margin-right: 4%;
+    margin-left: 350px;
+    width: 380px; 
+    margin-top: -2200px;
+
+    section{
+      justify-content: flex-end;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1106px) {
+    margin-right: 2%;
+    margin-top: -720px;
+  }
+
+  @media (min-width: 1600px) {
+    margin-right: 5%;
+    
+  }
+
+  
 `;

@@ -11,6 +11,7 @@ export const Container = styled.div`
     height: 223px;
     max-width: 365px;
   } 
+  
   .container__tittle{
     display: flex;
     align-items: flex-end;
@@ -61,4 +62,35 @@ export const Container = styled.div`
     text-align: center;
     color: #828282;
   }
+
+  @media (min-width: 450px){
+    justify-content: center;
+    section{
+      width: 80%;
+     
+      
+    }
+  }
+  @media (min-width: 800px){
+    float: right;
+    margin-right: 4%;
+    margin-left: 350px;
+    width: 380px; 
+    margin-top: -2200px;
+
+    section{
+      justify-content: flex-end;
+      width: 100%;
+    }
+  }
+  @media (min-width: 1106px) {
+    margin-right: 2%;
+    margin-top: -1090px;
+  }
+
+  @media (min-width: 1600px) {
+    margin-right: 5%;
+    margin-top: -720px;
+  }
+
 `;

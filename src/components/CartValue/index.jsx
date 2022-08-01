@@ -12,7 +12,7 @@ const CartValue = ({ currentSale, setCurrentSale }) => {
                         </p>
                         <div className="container__total">
                             <p className="container__title">Total</p>
-                            <p className="container__price"> R$ {currentSale.reduce((acc, value) => acc + value.price, 0).toFixed(2) } </p>
+                            <p className="container__price"> {currentSale.reduce((acc, value) => acc + value.price, 0).toFixed(2) } </p>
                         </div>
                         <div>
                             <button

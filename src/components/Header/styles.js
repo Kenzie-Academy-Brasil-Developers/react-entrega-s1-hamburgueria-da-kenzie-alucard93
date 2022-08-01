@@ -14,13 +14,20 @@ export const Container = styled.div`
     height: 139px;
   }
 
+  .container__header{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 90%;
+    margin-left: 5%;
+  }
+
   .container__img{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 36px;
-    margin-top: 16px;
   }
 
   .container__button{
@@ -67,7 +74,38 @@ export const Container = styled.div`
     background: #27AE60;
     border: 2px solid #27AE60;
     border-radius: 8px;
-    margin-right: 1%;
     color: #FFFFFF;
   }
+  @media (min-width: 562px){
+    header{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      
+    }
+
+    .container__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    
+  }
+
+    .container__img{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 160px;
+      
+
+    }
+
+    .container__button{
+      
+      width: 60%;
+    }
+}
 `;
+

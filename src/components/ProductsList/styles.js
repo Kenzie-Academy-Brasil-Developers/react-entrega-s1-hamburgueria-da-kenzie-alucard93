@@ -5,10 +5,8 @@ import styled from "styled-components";
 export const ContainerProduct = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100vw;
   overflow: auto;
   margin-top: 20px;
-
 
   ::-webkit-scrollbar{
     border-radius: 20px;
@@ -31,10 +29,11 @@ export const ContainerProduct = styled.div`
     display: flex;
     flex-direction: column;
     width: 90%;
-    margin-left: 5%;
+    margin-left: 3%;
     max-width: 300px;
     min-width: 299px;
     height: 346px;
+    max-height: 346px;
     background: #FFFFFF;
     border: 2px solid #E0E0E0;
     border-radius: 5px;
@@ -116,4 +115,34 @@ export const ContainerProduct = styled.div`
     line-height: 17px;
     color: #FFFFFF;
   }
-`;
+
+  @media (min-width: 800px){
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 2200px;
+  }
+
+  @media (min-width: 1106px){
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 670px; 
+    height: 1070px;
+  
+    .container__product{
+      margin-right: 0;
+    }
+  
+  }
+
+    @media (min-width: 1600px){
+    width: 1060px;
+    height: 720px; 
+      
+    }
+  
+`
+
+
