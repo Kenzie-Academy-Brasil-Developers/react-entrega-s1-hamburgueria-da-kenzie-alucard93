@@ -131,12 +131,12 @@ export const ContainerCart = styled.div`
 
   @media (min-width: 1106px) {
     margin-right: 2%;
-    margin-top: -720px;
+    margin-top: -1066px;
   }
 
   @media (min-width: 1600px) {
     margin-right: 5%;
-    
+    margin-top: -716px;
   }
 
   
